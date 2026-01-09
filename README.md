@@ -58,6 +58,6 @@ Want to try the app without building it?
 
 ## 📱 Preview
 
-| Auth Screen                                 | Chat Screen                                          |
-| ------------------------------------------- | ---------------------------------------------------- |
-| ![Home](assets/screenshots/auth_screen.png) | ![Entertainment](assets/screenshots/chat_screen.png) |
+| Auth Screen                                                                              | Chat Screen                                          |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| ![Home](assets/screenshots/auth_screen.png) ![Home](assets/screenshots/auth_screen2.png) | ![Entertainment](assets/screenshots/chat_screen.png) |
