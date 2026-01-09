@@ -1,0 +1,56 @@
+final _firebase = FirebaseAuth.instance;
+_firebase.createUserWithEmailAndPassword(
+          email: _enteredEmail,
+          password: _enteredPassword, )
+
+// Behind the scene, this method from firebase SDK will send a HTTP request to firebase
+
+
+try {
+        _firebase.createUserWithEmailAndPassword(
+          email: _enteredEmail,
+          password: _enteredPassword,
+        ); // Behind the scene, this method from firebase SDK will send a HTTP request to firebase
+      } on FirebaseAuthException catch (error) {
+        
+        Any code
+      }
+
+When using try {...} on ... catch , only exceptions of the provided type (FirebaseAuthException in this case ) will be caught & handled.
+
+
+- We use firebase Authentication -> for make Signup and SignIn
+- We use firebase Storage -> for storage image files.
+- We use firebase Firestore database -> for store metadata like 
+	( a path to the uploaded image that belongs to a user - username - chat messages )
+
+
+Note:
+- Firestore works with so called Collections. (Folders that contains data), 
+  and Documents, which is the actual data entries.
+- Document could have more nested collection.
+
+
+- sets -> Tells which data will be stored in the document
+- add -> automatically generated name (unique id )
+
+Examples:
+
+ await FirebaseFirestore.instance
+            .collection('Users')
+            .doc(userCredential.user!.uid)
+            .set({'username': _enteredUsername, 'email': _enteredEmail});
+
+
+
+await FirebaseFirestore.instance.collection('chat').add({
+      'text': enteredMessage,
+      'createdAt': Timestamp.now(),
+      'userId': user.uid,
+      'username': userData.data()!['username'],
+    });
+
+
+- we might learn in the future how to make an authentication chatScreen to make a specific 
+  ChatScreen for each two users.
+
